@@ -1,10 +1,7 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/gin-gonic/gin"
-	"github.com/spf13/viper"
 )
 
 func main() {
@@ -12,12 +9,12 @@ func main() {
 	// viper.AddConfigPath("config/config.yaml")
 
 	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context){
+	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"message": "hello"
+			"message": "hello",
 		})
 	})
 
-	r.Run("0.0.0.0:8077")
+	r.Run("0.0.0.0:8017")
 
 }
