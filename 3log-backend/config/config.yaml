@@ -1,0 +1,17 @@
+app:
+  name: "3log-backend"
+  port: "8017"
+
+zap:
+  level: "debug"
+  format: "console"
+  prefix: "3log"
+
+db:
+  postgres:
+    host: "localhost"
+    port: "5432"
+    user: "postgres"
+    password: "Csh66666!"
+    dbname: "postgres"
+    sslmode: "disable"
