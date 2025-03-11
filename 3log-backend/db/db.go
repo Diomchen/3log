@@ -1,6 +1,7 @@
 package db
 
 import (
+	"3log-backend/config"
 	"fmt"
 
 	"gorm.io/driver/postgres"
@@ -11,7 +12,8 @@ var DB *gorm.DB
 
 func InitDB() {
 	var err error
-	dsn := "host=127.0.0.1 user=postgres password=Csh66666! dbname=postgres port=5432 sslmode=disable"
+	CDP := config.C.DB.Postgres
+	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s", CDP.Host, CDP.User, CDP.Password, CDP.Dbname, CDP.Port, CDP.Sslmode)
 	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("Failed to connect to database")
